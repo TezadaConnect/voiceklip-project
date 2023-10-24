@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:voiceklip_app/models/user_model.dart';
+import 'package:voiceklip_app/models/user_info_model.dart';
 import 'package:voiceklip_app/services/auth_service.dart';
 
 // import '../models/user.dart';
