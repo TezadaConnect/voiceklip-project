@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/views/billing_payment.dart';
@@ -78,7 +79,7 @@ class _PremiumWatchVideoState extends State<PremiumWatchVideo> {
                      Padding(
                    padding: const EdgeInsets.symmetric(horizontal: 2.0),
                    child: MyButton(
-                        onTap: () {Navigator.pop(context);},
+                        onTap: () => context.go('/signup'),
                         text: 'GO BACK',
                         txtstyle: const TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
@@ -165,12 +166,7 @@ class _PremiumWatchVideoState extends State<PremiumWatchVideo> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
                     child: MyButton(
-                     onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const BillingPayment(),
-                        ),
-                      ),
+                     onTap: () => context.go('/premium_payment'),
                       text: 'CREATE PREMIUM ACCOUNT',
                       txtstyle: const TextStyle(
                         color: Colors.white,

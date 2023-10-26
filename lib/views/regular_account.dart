@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/components/mytextfield.dart';
 
@@ -91,13 +92,8 @@ class _RegularAccountState extends State<RegularAccount> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 70.0),
                           child: MyButton(
-                                onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const TermsCondition(),
-                                      ),
-                                    ),
-                                    text: 'Terms and conditions...',
+                                onTap: () => context.go('/'),
+                                    text: 'Create Free Account',
                                     txtstyle: const TextStyle(
                                       color: Color.fromARGB(255, 0, 0, 0),
                                       fontWeight: FontWeight.bold,

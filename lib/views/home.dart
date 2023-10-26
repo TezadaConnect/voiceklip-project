@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/views/signup.dart';
 import 'package:voiceklip_app/views/testt.dart';
@@ -39,12 +40,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
                     child: MyButton(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TestT(),
-                          ),
-                        ),
+                      onTap: () => context.go('/login_screen'),
+                      
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => TestT(),
+                      //     ),
+                      //   ),
                       text: 'Login',
                       txtstyle: const TextStyle(
                         color: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/views/home.dart';
 
@@ -44,12 +45,7 @@ class _WelcomeFreeAccountState extends State<WelcomeFreeAccount> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 90.0),
                     child: MyButton(
-                       onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                      ),
+                       onTap: () => context.go('/'),
                         text: 'PROFILE',
                         txtstyle: const TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),

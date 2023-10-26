@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:voiceklip_app/views/welcome_free.dart';
 
@@ -148,12 +149,7 @@ class _TermsConditionState extends State<TermsCondition> {
                                   
                                 onPressed: isChecked? () {
                                   if (isChecked==true) {
-                                     Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const WelcomeFreeAccount(),
-                                    )
-                                     );
+                                     context.go('/regular_account');
                                   } 
                                 }:null,
                                 child: const Text('Agree'),

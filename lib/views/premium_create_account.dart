@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/views/billing_payment.dart';
 
@@ -86,13 +87,8 @@ class _PremiumCreateAccountState extends State<PremiumCreateAccount> {
                        Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 70.0),
                           child: MyButton(
-                                onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const BillingPayment(),
-                                      ),
-                                    ),
-                                    text: 'Billing/Payment',
+                                onTap: () => context.go('/'),
+                                    text: 'FINISH',
                                     txtstyle: const TextStyle(
                                       color: Color.fromARGB(255, 255, 255, 255),
                                       fontWeight: FontWeight.bold,

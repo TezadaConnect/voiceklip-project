@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:voiceklip_app/views/pop_screen.dart';
 
@@ -154,7 +155,7 @@ class _TestTState extends State<TestT> with SingleTickerProviderStateMixin {
                           } else if (index == 4) {
                             buttonText = 'Reggae';
                           }else if (index == 5) {
-                            buttonText = 'Local';
+                            buttonText = 'Poetry';
                           }else if (index == 6) {
                             buttonText = 'Rap';
                           }else if (index == 7) {
@@ -173,12 +174,14 @@ class _TestTState extends State<TestT> with SingleTickerProviderStateMixin {
                           return GestureDetector(
                             onTap: () {
                               if (index == 0){
-                                Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PopScreen(),
-                                  ),
-                                );
+
+                                context.go('/pop_screen');
+                                // Navigator.push(
+                                // context,
+                                // MaterialPageRoute(
+                                //   builder: (context) => PopScreen(),
+                                //   ),
+                                // );
                               }
                             },
                             child: Container(
@@ -232,9 +235,7 @@ class _TestTState extends State<TestT> with SingleTickerProviderStateMixin {
                       ),
                       
                       GestureDetector(
-                        onTap: () {
-                          
-                        },
+                        onTap: () =>context.go('/premium_profile') ,
                         child: _profileImage()),
                       ],
                     ),   

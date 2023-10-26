@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 
 import 'package:voiceklip_app/views/welcome_premium.dart';
@@ -82,12 +83,7 @@ class _BillingPaymentState extends State<BillingPayment> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 90.0),
                           child: MyButton(
-                                onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const WelcomePremium(),
-                                      ),
-                                    ),
+                                onTap: () => context.go('/premium_terms'),
                                     text: 'Bank Transfer',
                                     txtstyle: const TextStyle(
                                       color: Color.fromARGB(255, 0, 0, 0),

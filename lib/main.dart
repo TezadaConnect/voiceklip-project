@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:voiceklip_app/provider/auth_provider.dart';
-import 'package:voiceklip_app/views/home.dart';
+import 'package:voiceklip_app/router.dart';
+
 
 void main() {
   runApp(MultiProvider(
@@ -18,15 +19,16 @@ class MainScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      routerConfig: router,
       title: 'VoiceKlip',
       theme: ThemeData(
         fontFamily: GoogleFonts.ibmPlexSans().fontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      // home: const HomeScreen(),
     );
   }
 }

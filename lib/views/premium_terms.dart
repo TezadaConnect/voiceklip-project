@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:voiceklip_app/views/home.dart';
+import 'package:go_router/go_router.dart';
+
 
 
 
@@ -149,12 +150,7 @@ class _PremiumTermsConditionState extends State<PremiumTermsCondition> {
                                   
                                 onPressed: isChecked? () {
                                   if (isChecked==true) {
-                                     Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const HomeScreen(),
-                                    )
-                                     );
+                                     context.go('/premium_account');
                                   } 
                                 }:null,
                                 child: const Text('Agree'),

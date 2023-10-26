@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/components/mytextfield.dart';
-import 'package:voiceklip_app/views/premium_terms.dart';
+
 
 
 class PremiumAccount extends StatefulWidget {
@@ -92,19 +93,14 @@ class _PremiumAccountState extends State<PremiumAccount> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 70.0),
                           child: MyButton(
-                                onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const PremiumTermsCondition(),
-                                      ),
-                                    ),
-                                    text: 'Terms and conditions...',
+                                onTap: () => context.go('/premium_create'),
+                                    text: 'create premium profile',
                                     txtstyle: const TextStyle(
-                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       fontWeight: FontWeight.bold,
                                       fontSize: 12,
                                     ),
-                                    color: const Color.fromARGB(255, 255, 255, 255),
+                                   color: const Color.fromARGB(255, 187, 21, 71),
                                   ),
                         ),
                         

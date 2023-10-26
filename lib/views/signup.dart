@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/views/billing_payment.dart';
@@ -67,12 +68,7 @@ class _SignUpState extends State<SignUp> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: MyButton(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const RegularAccount(),
-                            ),
-                          ),
+                          onTap: () =>  context.go('/regular_terms'),
                           text: 'FREE ACCOUNT',
                           txtstyle: const TextStyle(
                             color: Color.fromARGB(255, 0, 0, 0),
@@ -85,12 +81,7 @@ class _SignUpState extends State<SignUp> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: MyButton(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const RegularWatchVideo(),
-                            ),
-                          ),
+                          onTap: () => context.go('/regular_watch'),
                           text: 'WATCH VIDEO',
                           txtstyle: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
@@ -143,12 +134,7 @@ class _SignUpState extends State<SignUp> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: MyButton(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const BillingPayment(),
-                            ),
-                          ),
+                          onTap: () => context.go('/premium_payment'),
                           text: 'PREMIUM ACCOUNT',
                           txtstyle: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
@@ -161,12 +147,7 @@ class _SignUpState extends State<SignUp> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: MyButton(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const PremiumWatchVideo(),
-                            ),
-                          ),
+                          onTap: () => context.go('/premium_watch'),
                           text: 'WATCH VIDEO',
                           txtstyle: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),

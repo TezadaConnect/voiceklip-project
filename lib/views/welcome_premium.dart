@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 
-import 'package:voiceklip_app/views/premium_account.dart';
+
 
 
 class WelcomePremium extends StatefulWidget {
@@ -46,12 +47,7 @@ class _WelcomePremiumState extends State<WelcomePremium> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 90.0),
                     child: MyButton(
-                       onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const PremiumAccount(),
-                        ),
-                      ),
+                       onTap: () => context.go('/premium_account'),
                         text: 'PREMIUM',
                         txtstyle: const TextStyle(
                           color: Colors.white,

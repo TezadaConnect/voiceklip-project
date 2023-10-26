@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:video_player/video_player.dart';
 import 'package:voiceklip_app/views/regular_account.dart';
@@ -77,7 +78,7 @@ class _RegularWatchVideoState extends State<RegularWatchVideo> {
                      Padding(
                    padding: const EdgeInsets.symmetric(horizontal: 2.0),
                    child: MyButton(
-                        onTap: () {Navigator.pop(context);},
+                        onTap:() => context.go('/signup'),
                         text: 'GO BACK',
                         txtstyle: const TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
@@ -162,12 +163,7 @@ class _RegularWatchVideoState extends State<RegularWatchVideo> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
                     child: MyButton(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RegularAccount(),
-                        ),
-                      ),
+                      onTap: () => context.go('/regular_terms'),
                       text: 'CREATE FREE ACCOUNT',
                       txtstyle: const TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),

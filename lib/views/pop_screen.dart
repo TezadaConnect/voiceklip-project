@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 
 
@@ -157,7 +158,7 @@ class _PopScreenState extends State<PopScreen> with SingleTickerProviderStateMix
                           IconButton(
                             icon: Icon(Icons.arrow_back, color: Colors.white),
                             onPressed: () {
-                              Navigator.pop(context);
+                              context.go('/login_screen');
                             }
                           ),
                           IconButton(
