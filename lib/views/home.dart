@@ -58,8 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: MyButton(
                     onTap: () {
                       
-                      final authProvider = Provider.of<AuthProvider>(context, listen: false);
-                      authProvider.signInWithEmailAndPassword(emailController.text, passwordController.text);
+                      // final authProvider = Provider.of<AuthProvider>(context, listen: false);
+                      // authProvider.signInWithEmailAndPassword(emailController.text, passwordController.text);
                     } ,
                     
                     // context.go('/login_screen'),
