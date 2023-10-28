@@ -24,22 +24,23 @@ class _PopScreenState extends State<PopScreen> with SingleTickerProviderStateMix
   void initState() {
     super.initState();
     // Initialize video controllers for the first row
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 1; i++) {
       firstRowControllers.add(
-        VideoPlayerController.network(
-          
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+        VideoPlayerController.networkUrl(
+         
+        Uri.parse('https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
+   
     
       
         ),
       );
     }
     // Initialize video controllers for the second row
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 1; i++) {
       secondRowControllers.add(
-        VideoPlayerController.network(
+        VideoPlayerController.networkUrl(
          
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+        Uri.parse('https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
    
       
         ),
@@ -66,252 +67,253 @@ class _PopScreenState extends State<PopScreen> with SingleTickerProviderStateMix
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-      body: Form(
-        child: SafeArea(
+      body: SafeArea(
+        
+        child: SingleChildScrollView(
           
-          child: SingleChildScrollView(
+          child: Column(
             
-            child: Column(
-              
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 130,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.fitWidth,
-                          image: AssetImage("asset/images/header_bg.png"),
-                        ),
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 130,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage("asset/images/header_bg.png"),
                       ),
-                      ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0,40,0,0),
-                          child: Row(
-                            children: [
-                              const SizedBox(width: 40,),
-                              Image.asset('asset/images/voiceklip_logo_only.png', height: 50,),
-                              const SizedBox(width: 80,),
-                                  SizedBox(
-                                    width: 200,
-                                    height: 40,
-                                    child: SearchAnchor(
-                                        builder: (BuildContext context, SearchController controller) {
-                                      return SearchBar(
-                                        controller: controller,
-                                        padding: const MaterialStatePropertyAll<EdgeInsets>(
-                                            EdgeInsets.symmetric(horizontal: 16.0)),
+                    ),
+                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0,40,0,0),
+                        child: Row(
+                          children: [
+                            const SizedBox(width: 40,),
+                            Image.asset('asset/images/voiceklip_logo_only.png', height: 50,),
+                            const SizedBox(width: 80,),
+                                SizedBox(
+                                  width: 200,
+                                  height: 40,
+                                  child: SearchAnchor(
+                                      builder: (BuildContext context, SearchController controller) {
+                                    return SearchBar(
+                                      controller: controller,
+                                      padding: const MaterialStatePropertyAll<EdgeInsets>(
+                                          EdgeInsets.symmetric(horizontal: 16.0)),
+                                      onTap: () {
+                                        controller.openView();
+                                      },
+                                      onChanged: (_) {
+                                        controller.openView();
+                                      },
+                                      leading: const Icon(Icons.search),
+                                      
+                                    );
+                                  }, suggestionsBuilder:
+                                          (BuildContext context, SearchController controller) {
+                                    return List<ListTile>.generate(5, (int index) {
+                                      final String item = 'item $index';
+                                      return ListTile(
+                                        title: Text(item),
                                         onTap: () {
-                                          controller.openView();
+                                          setState(() {
+                                            controller.closeView(item);
+                                          });
                                         },
-                                        onChanged: (_) {
-                                          controller.openView();
-                                        },
-                                        leading: const Icon(Icons.search),
-                                        
                                       );
-                                    }, suggestionsBuilder:
-                                            (BuildContext context, SearchController controller) {
-                                      return List<ListTile>.generate(5, (int index) {
-                                        final String item = 'item $index';
-                                        return ListTile(
-                                          title: Text(item),
-                                          onTap: () {
-                                            setState(() {
-                                              controller.closeView(item);
-                                            });
-                                          },
-                                        );
-                                      });
-                                    }),
-                                  ),
-                            ],
-                          ),
-                        ),
-                          
-                          const Padding(
-                            padding:  EdgeInsets.fromLTRB(20,0,2,2),
-                            child: Text('VoiceKLIP',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                                    });
+                                  }),
                                 ),
-                          ),
-                                  
+                          ],
+                        ),
+                      ),
+                        
+                        const Padding(
+                          padding:  EdgeInsets.fromLTRB(20,0,2,2),
+                          child: Text('VoiceKLIP',
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                              ),
+                        ),
+                                
 
+                    ],
+                  ),
+
+                ],
+              ),
+
+            //icon nav
+             Column(
+               children: [
+                    //1st row icons
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround, // Adjust as needed
+                      children: [
+                        
+                        IconButton(
+                          icon: Icon(Icons.arrow_back, color: Colors.white),
+                          onPressed: () {
+                            context.go('/login_screen');
+                          }
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.voice_chat, color: Colors.white),
+                          onPressed: () {
+                            // Add your logic here
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.pages, color: Colors.white),
+                          onPressed: () {
+                            // Add your logic here
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.social_distance, color: Colors.white),
+                          onPressed: () {
+                            // Add your logic here
+                          },
+                        ),
                       ],
                     ),
-
-                  ],
-                ),
-
-              //icon nav
-               Column(
-                 children: [
-                      //1st row icons
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround, // Adjust as needed
-                        children: [
-                          
-                          IconButton(
-                            icon: Icon(Icons.arrow_back, color: Colors.white),
-                            onPressed: () {
-                              context.go('/login_screen');
-                            }
-                          ),
-                          IconButton(
-                            icon: Icon(Icons.voice_chat, color: Colors.white),
-                            onPressed: () {
-                              // Add your logic here
-                            },
-                          ),
-                          IconButton(
-                            icon: Icon(Icons.pages, color: Colors.white),
-                            onPressed: () {
-                              // Add your logic here
-                            },
-                          ),
-                          IconButton(
-                            icon: Icon(Icons.social_distance, color: Colors.white),
-                            onPressed: () {
-                              // Add your logic here
-                            },
-                          ),
-                        ],
-                      ),
-                      // ------- feed
+                    // ------- feed
 SizedBox(
   height: 400,
   child: Column(
     children: [
       SizedBox(
-        height: 200,
-        width: MediaQuery.of(context).size.width,
-        child: Expanded(
-          child: ListView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: firstRowControllers.length,
-            itemBuilder: (context, index) {
-              final controller = firstRowControllers[index];
-               // Get the specific controller
-              return buildVideoPlayer(controller);
-              
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
-              //   child: GestureDetector(
-              //     onTap: () {
-              //       setState(() {
-              //         if (controller.value.isPlaying) {
-              //           controller.pause();
-              //         } else {
-              //           controller.play();
-              //         }
-              //       });
-              //     },
-                 
-              //   ),
-              // );
-            },
-          ),
+      height: 200,
+      width: MediaQuery.of(context).size.width,
+      child: Expanded(
+        child: ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: firstRowControllers.length,
+          itemBuilder: (context, index) {
+            final controller = firstRowControllers[index];
+             // Get the specific controller
+            return buildVideoPlayer(controller);
+            
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
+            //   child: GestureDetector(
+            //     onTap: () {
+            //       setState(() {
+            //         if (controller.value.isPlaying) {
+            //           controller.pause();
+            //         } else {
+            //           controller.play();
+            //         }
+            //       });
+            //     },
+               
+            //   ),
+            // );
+          },
         ),
+      ),
       ),
       const SizedBox(height: 70,),
       SizedBox(
-        height: 100,
+      height: 100,
        width: MediaQuery.of(context).size.width,
-        child: Row(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: secondRowControllers.length,
-                itemBuilder: (context, index) {
-                  final controller = secondRowControllers[index]; // Get the specific controller
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
-                    child: GestureDetector(
-                      onTap: () {
-                       
-                          if (controller.value.isPlaying) {
-                            controller.pause();
-                          } else {
-                            controller.play();
-                          }
+      child: Row(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: secondRowControllers.length,
+              itemBuilder: (context, index) {
+                final controller = secondRowControllers[index]; // Get the specific controller
+                return buildVideoPlayer(controller);
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
+                //   child: GestureDetector(
+                //     onTap: () {
                      
-                      },
-                      child: FutureBuilder(
-                        future: controller.initialize(),
-                        builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.done) {
-                            return AspectRatio(
-                              aspectRatio: controller.value.aspectRatio,
-                              child: VideoPlayer(controller),
-                            );
-                          } else {
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          }
-                        },
-                      ),
-                    ),
-                  );
-                },
-              ),
+                //         if (controller.value.isPlaying) {
+                //           controller.pause();
+                //         } else {
+                //           controller.play();
+                //         }
+                   
+                //     },
+                //     child: FutureBuilder(
+                //       future: controller.initialize(),
+                //       builder: (context, snapshot) {
+                //         if (snapshot.connectionState == ConnectionState.done) {
+                //           return AspectRatio(
+                //             aspectRatio: controller.value.aspectRatio,
+                //             child: VideoPlayer(controller),
+                //           );
+                //         } else {
+                //           return const Center(
+                //             child: CircularProgressIndicator(),
+                //           );
+                //         }
+                //       },
+                //     ),
+                //   ),
+                // );
+              },
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
       ),
     ],
   ),
 ),
-                      //2nd row
-                      // Add the 3x3 grid of buttons here
-                      
-                        ],
-                      ),
-                      
-                      const SizedBox(height: 25.0,),
-                      Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                     
-                      children: [
-                        
-                      Column(
-                        children: [
-                          Row(
-                                 
-                            children: [
-                              Image.asset('asset/images/puma_logo.png', height: 60,),
-                              const SizedBox(width: 10.0,),
-                              Image.asset('asset/images/puma_logo.png', height: 60,),
-                            ],
-                          ),
-                          const SizedBox(height: 10.0,),
-                          Row(
-                            
-                            children: [
-                              Image.asset('asset/images/puma_logo.png', height: 60,),
-                              const SizedBox(width: 10.0,),
-                              Image.asset('asset/images/puma_logo.png', height: 60,),
-                            ],
-                          ),
-                        ],
-                      ),
-                      
-                     _profileImage(),
+                    //2nd row
+                    // Add the 3x3 grid of buttons here
+                    
                       ],
-                    ),   
+                    ),
+                    
+                    const SizedBox(height: 25.0,),
+                    Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   
+                    children: [
+                      
+                    Column(
+                      children: [
+                        Row(
+                               
+                          children: [
+                            Image.asset('asset/images/puma_logo.png', height: 60,),
+                            const SizedBox(width: 10.0,),
+                            Image.asset('asset/images/puma_logo.png', height: 60,),
+                          ],
+                        ),
+                        const SizedBox(height: 10.0,),
+                        Row(
+                          
+                          children: [
+                            Image.asset('asset/images/puma_logo.png', height: 60,),
+                            const SizedBox(width: 10.0,),
+                            Image.asset('asset/images/puma_logo.png', height: 60,),
+                          ],
+                        ),
+                      ],
+                    ),
+                    
+                   GestureDetector(
+                    onTap: () => context.go('/premium_profile'),
+                    child: _profileImage()),
+                    ],
+                  ),   
 
-              ],
-            ),
-          
-           
+            ],
           ),
-
+        
+         
         ),
+
       ),
     );
    

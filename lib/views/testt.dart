@@ -125,9 +125,7 @@ class _TestTState extends State<TestT> with SingleTickerProviderStateMixin {
                           ),
                           IconButton(
                             icon: Icon(Icons.social_distance, color: Colors.white),
-                            onPressed: () {
-                              // Add your logic here
-                            },
+                            onPressed: () =>context.go('/pop_screen'),
                           ),
                         ],
                       ),

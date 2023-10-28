@@ -84,7 +84,7 @@ class _PremiumProfileState extends State<PremiumProfile> {
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(0,0,20,0),
                             child: GestureDetector(
-                              onTap: () => context.go('/'),
+                              onTap: () => context.go('/login_screen'),
                               child: Container(
                                 height: 35,
                                 width: 90,
@@ -113,7 +113,7 @@ class _PremiumProfileState extends State<PremiumProfile> {
               Column(
                 children: [
                   Container(
-                    height: 300,
+                    
                     
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -123,16 +123,31 @@ class _PremiumProfileState extends State<PremiumProfile> {
                                   Row(
                                     children: [
                                       _profile(),
-                                     
+                                      
                                     ],
                                     ),
-                                    const SizedBox(height: 10,),
-                                    Row(
-                                      children: [
-                                        _followerCount()
-                                      ],
-                                    )
+                                    const SizedBox(height: 5,),
+                              
                                     
+                                        _followerCount(),
+                                        
+                                  
+                                    Container(
+                                        height: 35,
+                                        width: 90,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(8.0), // Adjust the corner radius as needed
+                                          color: const Color.fromARGB(255, 187, 21, 71), // Customize the button color
+                                        ),
+                                          child: const Center(
+                                            child: Text(style:  TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 13,),
+                                              'FOLLOW ME'),
+                                          ),
+                                      ),
+                                      const SizedBox(height: 10,)
                                 ],
                               ),
                               Column(
@@ -159,7 +174,9 @@ class _PremiumProfileState extends State<PremiumProfile> {
                                 children: [
                                   Row(
                                     children: [
-                                      _featuredPerformance(),
+                                      GestureDetector(
+                                        onTap: () => context.go('/featured_screen'),
+                                        child: _featuredPerformance()),
                                      
                                     ],
                                     ),
@@ -197,19 +214,22 @@ class _PremiumProfileState extends State<PremiumProfile> {
                                 color: Colors.white
                               ),),
                               const SizedBox(height: 5,),
-                              Container(
-                                height: 35,
-                                width: 90,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.0), // Adjust the corner radius as needed
-                                  color: const Color.fromARGB(255, 255, 240, 23), // Customize the button color
-                                ),
-                                  child: const Center(
-                                    child: Text(style:  TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,),
-                                      'My Store'),
+                              GestureDetector(
+                                onTap: () => context.go('/mystore_screen'),
+                                child: Container(
+                                  height: 35,
+                                  width: 90,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8.0), // Adjust the corner radius as needed
+                                    color: const Color.fromARGB(255, 255, 240, 23), // Customize the button color
                                   ),
+                                    child: const Center(
+                                      child: Text(style:  TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,),
+                                        'My Store'),
+                                    ),
+                                ),
                               ),
                                 ],
                               ),
@@ -314,7 +334,7 @@ Widget _name (){
 }
 
 Widget _followerCount (){
-  return const Text('2.5M Listeners', 
+  return const Text('2.5M AUDIENCE', 
           style: TextStyle(
             fontSize: 19,
             color: Colors.white),);
