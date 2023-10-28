@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
-import 'package:voiceklip_app/views/billing_payment.dart';
+
 
 
 class PremiumWatchVideo extends StatefulWidget {

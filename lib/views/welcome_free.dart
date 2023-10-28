@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
-import 'package:voiceklip_app/views/home.dart';
+
 
 class WelcomeFreeAccount extends StatefulWidget {
   const WelcomeFreeAccount({super.key});

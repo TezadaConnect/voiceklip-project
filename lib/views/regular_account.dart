@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/components/mytextfield.dart';
 
-import 'package:voiceklip_app/views/terms_condition.dart';
 
 
 

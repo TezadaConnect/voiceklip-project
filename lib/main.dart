@@ -5,7 +5,9 @@ import 'package:voiceklip_app/provider/auth_provider.dart';
 import 'package:voiceklip_app/router.dart';
 
 
+
 void main() {
+  
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => AuthProvider()),

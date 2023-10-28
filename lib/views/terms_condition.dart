@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:voiceklip_app/views/welcome_free.dart';
+
 
 class TermsCondition extends StatefulWidget {
   const TermsCondition({super.key});

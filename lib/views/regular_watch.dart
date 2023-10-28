@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:video_player/video_player.dart';
-import 'package:voiceklip_app/views/regular_account.dart';
 
 class RegularWatchVideo extends StatefulWidget {
   const RegularWatchVideo({super.key});

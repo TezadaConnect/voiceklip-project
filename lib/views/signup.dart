@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:voiceklip_app/components/mybutton.dart';
-import 'package:voiceklip_app/views/billing_payment.dart';
 
-import 'package:voiceklip_app/views/premium_watch.dart';
-import 'package:voiceklip_app/views/regular_account.dart';
-import 'package:voiceklip_app/views/regular_watch.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

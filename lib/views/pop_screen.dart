@@ -189,32 +189,30 @@ SizedBox(
       SizedBox(
       height: 200,
       width: MediaQuery.of(context).size.width,
-      child: Expanded(
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: firstRowControllers.length,
-          itemBuilder: (context, index) {
-            final controller = firstRowControllers[index];
-             // Get the specific controller
-            return buildVideoPlayer(controller);
-            
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
-            //   child: GestureDetector(
-            //     onTap: () {
-            //       setState(() {
-            //         if (controller.value.isPlaying) {
-            //           controller.pause();
-            //         } else {
-            //           controller.play();
-            //         }
-            //       });
-            //     },
-               
-            //   ),
-            // );
-          },
-        ),
+      child: ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: firstRowControllers.length,
+        itemBuilder: (context, index) {
+          final controller = firstRowControllers[index];
+           // Get the specific controller
+          return buildVideoPlayer(controller);
+          
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
+          //   child: GestureDetector(
+          //     onTap: () {
+          //       setState(() {
+          //         if (controller.value.isPlaying) {
+          //           controller.pause();
+          //         } else {
+          //           controller.play();
+          //         }
+          //       });
+          //     },
+             
+          //   ),
+          // );
+        },
       ),
       ),
       const SizedBox(height: 70,),
