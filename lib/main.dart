@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:voiceklip_app/provider/auth_provider.dart';
+import 'package:voiceklip_app/providers/auth_provider.dart';
 import 'package:voiceklip_app/router.dart';
-
 
 void main() {
   runApp(MultiProvider(

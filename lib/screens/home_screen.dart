@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:voiceklip_app/components/mybutton.dart';
 import 'package:voiceklip_app/views/signup.dart';
-import 'package:voiceklip_app/views/testt.dart';
-
-// import 'package:voiceklip_app/views/voiceklip_home.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -25,23 +21,32 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 90,),
-
-                  Image.asset('asset/images/voiceklip_logo_only.png', height: 190,),
-                  const SizedBox(height: 10,),
-
-                  const Text('VoiceKLIP',
-                  style: TextStyle(color: Colors.white, fontSize: 38),
+                  const SizedBox(
+                    height: 90,
                   ),
-                  const Text('SING.EXPRESS.SHOW',
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  Image.asset(
+                    'asset/images/voiceklip_logo_only.png',
+                    height: 190,
                   ),
-                  const SizedBox(height: 80,),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'VoiceKLIP',
+                    style: TextStyle(color: Colors.white, fontSize: 38),
+                  ),
+                  const Text(
+                    'SING.EXPRESS.SHOW',
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                  const SizedBox(
+                    height: 80,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
                     child: MyButton(
                       onTap: () => context.go('/login_screen'),
-                      
+
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(
@@ -57,7 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: const Color.fromARGB(255, 187, 21, 71),
                     ),
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
                     child: MyButton(
@@ -65,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => const SignUp(),
-                          ),
                         ),
+                      ),
                       text: 'Register now!',
                       txtstyle: const TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),
@@ -76,17 +83,32 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: const Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
-                   const SizedBox(height: 80,),
-                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                     Image.asset('asset/images/smart_logo.png', height: 60,),
-                      const SizedBox(width: 20.0,),
-                      Image.asset('asset/images/camella_logo.png', height: 60,),
-                      const SizedBox(width: 20.0,),
-                      Image.asset('asset/images/puma_logo.png', height: 60,),
-                      ],
-                    ),      
+                  const SizedBox(
+                    height: 80,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'asset/images/smart_logo.png',
+                        height: 60,
+                      ),
+                      const SizedBox(
+                        width: 20.0,
+                      ),
+                      Image.asset(
+                        'asset/images/camella_logo.png',
+                        height: 60,
+                      ),
+                      const SizedBox(
+                        width: 20.0,
+                      ),
+                      Image.asset(
+                        'asset/images/puma_logo.png',
+                        height: 60,
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -95,5 +117,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  
 }
