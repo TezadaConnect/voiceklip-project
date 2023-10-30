@@ -1,9 +1,10 @@
 // Input go route here
 
 import 'package:go_router/go_router.dart';
+import 'package:voiceklip_app/views/auth_page.dart';
 import 'package:voiceklip_app/views/billing_payment.dart';
 import 'package:voiceklip_app/views/featured.dart';
-import 'package:voiceklip_app/views/home.dart';
+
 import 'package:voiceklip_app/views/pop_screen.dart';
 import 'package:voiceklip_app/views/premium_account.dart';
 import 'package:voiceklip_app/views/premium_create_account.dart';
@@ -21,7 +22,7 @@ var router = GoRouter(
   routes: [
     GoRoute (
       path: '/',
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) => const AuthPage(),
     ),
     GoRoute (
       path: '/signup',

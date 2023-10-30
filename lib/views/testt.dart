@@ -1,9 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-
-
-
 
 class TestT extends StatefulWidget {
 const TestT({Key? key}) : super(key: key);
@@ -11,10 +8,12 @@ const TestT({Key? key}) : super(key: key);
   @override
   State<TestT> createState() => _TestTState();
 }
-
+final user = FirebaseAuth.instance.currentUser!;
 class _TestTState extends State<TestT> with SingleTickerProviderStateMixin {
   
-
+  void signUserOut(){
+    FirebaseAuth.instance.signOut()
+;  }
   
   Icon customIcon = const Icon(Icons.search);
   @override
@@ -126,6 +125,10 @@ class _TestTState extends State<TestT> with SingleTickerProviderStateMixin {
                           IconButton(
                             icon: Icon(Icons.social_distance, color: Colors.white),
                             onPressed: () =>context.go('/pop_screen'),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.logout, color: Colors.white),
+                            onPressed: () {signUserOut();},
                           ),
                         ],
                       ),
@@ -254,7 +257,7 @@ Widget _profileImage(){
   return Column(
     children: [
       Image.asset('asset/images/profile_pic.png', height: 88,width: 88,),
-      const Text('2.5M Listeners', style: TextStyle(color: Colors.white),),
+      Text(user.email!, style:const  TextStyle(color: Colors.white),),
     ],
   );
  
