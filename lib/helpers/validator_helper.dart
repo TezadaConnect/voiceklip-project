@@ -26,7 +26,7 @@ final requiredValidator =
 
 // checks if the password has a minimum length of 8 characters and is also a required field.
 final passwordValidator = ValidationBuilder()
-    .minLength(8, 'Password must be at least 8 characters long')
+    .minLength(7, 'Password must be at least 8 characters long')
     .required('Please enter password.')
     .build();
 
